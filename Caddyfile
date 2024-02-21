@@ -27,8 +27,5 @@
     # header @allowedOrigin Access-Control-Allow-Headers "*"
 
     # Reverse proxy configuration for PostHog
-    reverse_proxy {$BACKEND_HOST} {
-        header_up Host app.posthog.com
-        header_down -Access-Control-Allow-Origin
-    }
+    reverse_proxy {$BACKEND_HOST}
 }
