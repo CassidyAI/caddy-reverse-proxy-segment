@@ -12,6 +12,7 @@
 
 :{$PORT} { # site block, listens on the $PORT environment variable
     log { # access logs
+        level debug # set log level to debug
         format console # set access log format to console mode
     }
 
