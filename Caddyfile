@@ -30,5 +30,6 @@
     # Reverse proxy configuration for PostHog
     reverse_proxy https://{$BACKEND_HOST} {
         header_up Host {$BACKEND_HOST}
+        header_down -Access-Control-Allow-Origin
     }
 }
