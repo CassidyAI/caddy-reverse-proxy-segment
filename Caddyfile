@@ -32,4 +32,8 @@
         header_up Host {$BACKEND_HOST}
         header_down -Access-Control-Allow-Origin
     }
+
+    header {
+        Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+    }
 }
