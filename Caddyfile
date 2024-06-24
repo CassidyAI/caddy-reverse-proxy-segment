@@ -27,13 +27,13 @@
     header @allowedOrigin Access-Control-Allow-Methods "GET, HEAD, OPTIONS, PUT, POST, PATCH, DELETE"
     # header @allowedOrigin Access-Control-Allow-Headers "*"
 
+    header {
+        Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+    }
+
     # Reverse proxy configuration for PostHog
     reverse_proxy https://{$BACKEND_HOST} {
         header_up Host {$BACKEND_HOST}
         header_down -Access-Control-Allow-Origin
-    }
-
-    header {
-        Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
     }
 }
